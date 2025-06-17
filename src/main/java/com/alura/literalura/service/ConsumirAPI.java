@@ -9,9 +9,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ConsumoAPI {
+public class ConsumirAPI {
 
    public String obtenerDatos(String url){
+
       HttpClient client = HttpClient.newHttpClient();
       HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(url))
@@ -23,12 +24,10 @@ public class ConsumoAPI {
       } catch (IOException | InterruptedException e) {
          throw new RuntimeException(e);
       }
-      String json = response.body();
-      return json;
+      return response.body();
    }
 
    public JsonArray getDataResultsAsJson(String json) {
       return JsonParser.parseString(json).getAsJsonObject().get("results").getAsJsonArray();
-   }
    }
 }

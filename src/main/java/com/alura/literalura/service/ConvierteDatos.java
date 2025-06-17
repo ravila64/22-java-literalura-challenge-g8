@@ -8,10 +8,10 @@ public class ConvierteDatos implements IConvierteDatos {
    private ObjectMapper objectMapper = new ObjectMapper();
 
    // esto lo coloco la clase ConvuerteDatos, revisar
-   @Override
-   public <T> T convertData(String json, Class<T> clase) {
-      return null;
-   }
+//   @Override
+//   public <T> T convertData(String json, Class<T> clase) {
+//      return null;
+//   }
 
    // mirar JsonProcessingException va en el catch
    @Override

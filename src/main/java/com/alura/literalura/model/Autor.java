@@ -11,18 +11,18 @@ public class Autor {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
-   private String nombreAutor;
-   private Integer yearBorn;
-   private Integer yearDead;
-   @OneToMany(mappedBy = "autores", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   private String nombre;
+   private Integer year_born;
+   private Integer year_dead;
+   @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
    private List<Libro> libros;
 
    public Autor() {}
 
    public Autor(DataAutor autorD) {
-      this.nombreAutor = autorD.nombreAutor();
-      this.yearBorn = autorD.yearBorn();
-      this.yearDead = autorD.yearDead();
+      this.nombre = autorD.nombre();
+      this.year_born = autorD.year_born();
+      this.year_dead = autorD.year_dead();
    }
    // getters and setters
 
@@ -39,28 +39,28 @@ public class Autor {
       this.libros = libros;
    }
 
-   public String getNombreAutor() {
-      return nombreAutor;
+   public String getNombre_autor() {
+      return nombre;
    }
 
-   public void setNombreAutor(String nombreAutor) {
-      this.nombreAutor = nombreAutor;
+   public void setNombre_autor(String nombre_autor) {
+      this.nombre = nombre;
    }
 
-   public Integer getYearBorn() {
-      return yearBorn;
+   public Integer getYear_born() {
+      return year_born;
    }
 
-   public void setYearBorn(Integer yearBorn) {
-      this.yearBorn = yearBorn;
+   public void setYear_born(Integer year_born) {
+      this.year_born = year_born;
    }
 
-   public Integer getYearDead() {
-      return yearDead;
+   public Integer getYear_dead() {
+      return year_dead;
    }
 
-   public void setYearDead(Integer yearDead) {
-      this.yearDead = yearDead;
+   public void setYear_dead(Integer year_dead) {
+      this.year_dead = year_dead;
    }
 
    public List<Libro> getLibros() {
@@ -74,9 +74,9 @@ public class Autor {
    @Override
    public String toString() {
       return "Autor{" +
-            ", nombreAutor='" + nombreAutor + '\'' +
-            ", yearBorn=" + yearBorn +
-            ", yearDead=" + yearDead +
+            ", nombre='" + nombre + '\'' +
+            ", yearBorn=" + year_born +
+            ", yearDead=" + year_dead +
             ", libros=" + libros +
             '}';
    }
